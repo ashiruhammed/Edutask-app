@@ -1,3 +1,4 @@
+import { useRouter } from 'expo-router';
 import { Image, ImageBackground, View } from 'react-native';
 import { useStyles } from 'react-native-unistyles';
 import { AppButton } from '~/components/core/button';
@@ -5,11 +6,12 @@ import { AppText } from '~/components/core/text';
 
 export default function Home() {
   const { theme } = useStyles();
+  const router = useRouter();
   return (
     <ImageBackground
       source={require('~/assets/images/intro-screen-bg.png')}
       style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <View>
+      <View style={{ paddingHorizontal: 20 }}>
         <Image source={require('~/assets/images/edutask-logo.png')} />
         <AppText
           darkColor
@@ -19,7 +21,6 @@ export default function Home() {
             textAlign: 'center',
             marginTop: -40,
             ...theme.typography.bold,
-            paddingHorizontal: 10,
           }}>
           A classical Education for your future accessible anywhere, anytime
         </AppText>
@@ -30,6 +31,7 @@ export default function Home() {
           containerStyle={{
             marginTop: 30,
           }}
+          onPress={() => router.push('/sign-up')}
         />
         <AppButton
           title="I have an  account"
@@ -39,6 +41,7 @@ export default function Home() {
           containerStyle={{
             marginTop: 20,
           }}
+          onPress={() => router.push('/sign-up')}
         />
         <AppText darkColor style={{ marginTop: 20, textAlign: 'center' }}>
           Are you an instructor?

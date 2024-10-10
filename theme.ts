@@ -69,6 +69,12 @@ const typography = {
       android: 'Montserrat_700Bold',
     }),
   },
+  semiBold: {
+    fontFamily: Platform.select({
+      ios: 'Montserrat-SemiBold',
+      android: 'Montserrat_600SemiBold',
+    }),
+  },
   regular: {
     fontFamily: Platform.select({
       ios: 'Montserrat-Regular',
