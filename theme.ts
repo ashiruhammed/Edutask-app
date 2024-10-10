@@ -4,7 +4,7 @@ const colors = {
   white: '#ffffff',
   background: '#fff',
   text: '#000',
-  primary: '#008F4A',
+  primary: '#00BF63',
   yellow: {
     '50': '#fcfbea',
     '100': '#f9f9c8',
@@ -50,14 +50,14 @@ const colors = {
 const typography = {
   h1: {
     fontFamily: Platform.select({
-      ios: 'Montserrat_Bold',
+      ios: 'Montserrat-Bold',
       android: 'Montserrat_700Bold',
     }),
     fontSize: 32,
   },
   h2: {
     fontFamily: Platform.select({
-      ios: 'Montserrat_Bold',
+      ios: 'Montserrat-Bold',
       android: 'Montserrat_700Bold',
     }),
     fontSize: 32,
@@ -65,19 +65,19 @@ const typography = {
 
   bold: {
     fontFamily: Platform.select({
-      ios: 'Montserrat_Bold',
+      ios: 'Montserrat-Bold',
       android: 'Montserrat_700Bold',
     }),
   },
   regular: {
     fontFamily: Platform.select({
-      ios: 'Montserrat_Regular',
+      ios: 'Montserrat-Regular',
       android: 'Montserrat_400Regular',
     }),
   },
   light: {
     fontFamily: Platform.select({
-      ios: 'Montserrat_Regular',
+      ios: 'Montserrat-Regular',
       android: 'Montserrat_400Regular',
     }),
   },
