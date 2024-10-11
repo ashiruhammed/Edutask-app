@@ -30,7 +30,7 @@ const Layout = () => {
         headerShown: false,
       }}>
       <Tabs.Screen
-        name="snoop"
+        name="(snoop)"
         options={{
           title: 'Snoop',
           tabBarIcon: ({ color, focused }) => <Feather name="eye" size={24} color={color} />,

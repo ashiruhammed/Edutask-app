@@ -70,7 +70,7 @@ const Page = () => {
           containerStyle={{
             marginTop: 20,
           }}
-          onPress={() => router.push('/(tabs)/snoop')}
+          onPress={() => router.push('/(snoop)/')}
         />
         <AppText
           darkColor
@@ -88,7 +88,7 @@ const Page = () => {
               <GoogleIcon />
             </View>
           }
-          onPress={() => router.push('/(tabs)/snoop')}
+          onPress={() => router.push('/(snoop)/')}
         />
         <AppText darkColor style={{ marginTop: 15, textAlign: 'center' }}>
           By Proceeding, you agree to EduAfrica{' '}

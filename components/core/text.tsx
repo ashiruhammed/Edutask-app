@@ -16,7 +16,7 @@ export function AppText(props: AppTextProps) {
       style={[
         {
           ...theme.typography.regular,
-          color: props.darkColor ? '#000' : theme.colors.white,
+          color: props.darkColor ? '#000' : '#000',
         },
         props.style,
       ]}

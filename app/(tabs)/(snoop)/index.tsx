@@ -1,10 +1,12 @@
 import { FontAwesome } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 import React from 'react';
 import {
   Image,
   ImageBackground,
   ScrollView,
   StyleSheet,
+  TouchableOpacity,
   useWindowDimensions,
   View,
 } from 'react-native';
@@ -15,6 +17,7 @@ import { AppText } from '~/components/core/text';
 const Page = () => {
   const { theme } = useStyles();
   const { width } = useWindowDimensions();
+  const router = useRouter();
 
   return (
     <ImageBackground source={require('~/assets/images/sign-up-bg.jpg')} style={styles.background}>
@@ -101,7 +104,12 @@ const Page = () => {
               horizontal
               showsHorizontalScrollIndicator={false}>
               {Array.from({ length: 5 }).map((_, index) => (
-                <View key={index} style={{ width: width * 0.6 }}>
+                <TouchableOpacity
+                  onPress={() => {
+                    router.push('/course-details');
+                  }}
+                  key={index}
+                  style={{ width: width * 0.6 }}>
                   <Image
                     source={require('~/assets/images/new-courses.png')}
                     style={styles.courseImage}
@@ -118,7 +126,7 @@ const Page = () => {
                     </AppText>
                     <StarRating rating={4} />
                   </View>
-                </View>
+                </TouchableOpacity>
               ))}
             </ScrollView>
           </View>
@@ -170,11 +178,11 @@ const Page = () => {
   );
 };
 
-const StarRating = ({ rating }: { rating: number }) => {
+export const StarRating = ({ rating, color = '#FFD700' }: { rating: number; color?: string }) => {
   const stars = Array.from({ length: 5 }).map((_, index) => (
-    <FontAwesome key={index} name={index < rating ? 'star' : 'star-o'} size={14} color="#FFD700" />
+    <FontAwesome key={index} name={index < rating ? 'star' : 'star-o'} size={20} color={color} />
   ));
-  return <View style={{ flexDirection: 'row', marginTop: 4 }}>{stars}</View>;
+  return <View style={{ flexDirection: 'row', marginTop: 4, gap: 2, marginLeft: 4 }}>{stars}</View>;
 };
 
 const styles = StyleSheet.create({
